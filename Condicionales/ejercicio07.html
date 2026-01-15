@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 7 Condicionales</title>
+</head>
+<body>
+  <script>
+    let fp, edad;
+
+    input = prompt("FP?", "0");
+    fp = parseInt(input);
+    input = prompt("Edad?", "0");
+    edad = parseInt(input);
+
+    if (fp && edad >= 18)
+      document.write("Tiene acceso al portal web");
+    else if (fp && edad < 18)
+      document.write("NO tiene acceso")
+  </script>
+</body>
+</html>
