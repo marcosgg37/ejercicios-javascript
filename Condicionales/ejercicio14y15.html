@@ -14,13 +14,18 @@
     input = prompt("Mes?", "0");
     mes = parseInt(input);
 
-    if (mes % 2 == 1)
-      document.write("Tiene 31 días");
-    else
-      if (mes == 2)
-        document.write("Tiene 28 días");
+    if (mes > 7)
+      if (mes % 2 == 0)
+        document.write("Tiene 31 días");
       else
         document.write("Tiene 30 días");
+    else
+      if (mes % 2 == 1)
+        document.write("Tiene 31 días");
+      else if (mes == 2)
+        document.write("Tiene 28 días");
+      else
+        document.write("Tiene 30 días")
   </script>
 </body>
 
