@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2 formularios</title>
+  <script>
+    function calcular10perCent() {
+      const dato = parseFloat(document.form.numero.value)
+      let porCiento = (dato * 0.1).toFixed(2) // 2 decimales
+      document.getElementById("resultado").innerHTML = `El 10% de ${dato} es: ${porCiento} <br>`
+    }
+  </script>
+</head>
+<body>
+  <h2>Cálculo del 10%</h2>
+  
+  <form name="form" onsubmit="event.preventDefault(); calcular10perCent();">
+    <label for="numero">Introduce un numero</label>
+    <input type="text" name="numero">
+    <button type="submit">Submit</button>
+  </form>
+  <p id="resultado">Resultado</p>
+</body>
+</html>

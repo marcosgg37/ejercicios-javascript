@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 7 Function</title>
+  <script>
+    let saludo = (persona1, persona2) => {
+      document.getElementById("salida").innerHTML = `Hola ${persona1} y ${persona2}`
+    }
+  </script>
+</head>
+<body>
+  <h1>Función con dos parámetros</h1>
+  <p>Saluda a dos personas.</p>
+  <p id="salida">Aquí el resultado</p>
+
+  <script>
+    saludo(prompt("Nombre de la primera persona a saludar", ""), prompt("Nombre de la segunda persona a saludar", ""))
+  </script>
+</body>
+</html>

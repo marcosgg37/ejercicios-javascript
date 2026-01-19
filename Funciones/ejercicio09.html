@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 9 Funciones</title>
+  <script defer>
+    function suma(x, y) {
+      let suma = x + y;
+      document.getElementById("resultado").innerHTML = `La suma de ${x} y ${y} es ${suma}`;
+    }
+  </script>
+</head>
+<body>
+  <p id="resultado">res</p>
+  
+  <script>
+    let num1 = parseInt(prompt("Introduce un numero", ""));
+    let num2 = parseInt(prompt("Introduce otro numero", ""));
+    suma(num1, num2);
+  </script>
+</body>
+</html>
