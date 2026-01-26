@@ -1,0 +1,2 @@
+z es una variable local de tipo entero 
+Podríamos sacarla por pantalla desde la función donde se inicializa
