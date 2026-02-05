@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 11 Formularios</title>
+  <script>
+    function calcularPesoIdeal() {
+      let altura = parseInt(document.datos.altura.value);
+      let edad = parseInt(document.datos.edad.value);
+      let esMujer = parseInt(document.datos.sexo.value);
+      let peso = (50 + ((altura - 150) / 4) * 3 + (edad - 20) / 4) * (esMujer ? 0.9 : 1);
+
+      document.getElementById("result").innerHTML = `Su peso ideal es ${peso}`;
+    }
+  </script>
+</head>
+<body>
+  <form name="datos">
+    <label for="altura">Altura (cm):</label>
+    <input type="text" name="altura">
+    <br>
+    <label for="edad">Edad:</label>
+    <input type="text" name="edad">
+    <br>
+    Sexo:
+    <label for="hombre">Hombre </label>
+    <input type="radio" name="sexo" id="sexo-hombre" value="0">
+    <label for="mujer">Mujer </label>
+    <input type="radio" name="sexo" id="sexo-mujer" value="1">
+    <br>
+    <label for="peso">Peso actual:</label>
+    <input type="text" name="peso">
+    <br>
+    <input type="button" value="Calcular" onclick="calcularPesoIdeal()">
+  </form>
+  <p id="result"></p>
+</body>
+</html>

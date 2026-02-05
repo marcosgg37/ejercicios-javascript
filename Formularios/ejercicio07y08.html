@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 7 y 8 Formularios</title>
+  <script>
+    function pasaraFahrenheit() {
+      let grados = document.fdatos.celsius.value;
+      document.fdatos.fahrenheit.value = grados * 1.8 + 32;
+    }
+
+    function pasaraCelsius() {
+      let grados =  document.fdatos.fahrenheit.value;
+      document.fdatos.celsius.value = (grados - 32) / 1.8;
+    }
+  </script>
+</head>
+<body>
+  <form  name="fdatos">
+    Grados en Fahrenheit: <input type="text" name="fahrenheit" size="10"><br>
+    Grados en Celsius: <input type="text" name="celsius" size="10">
+    <br><br>
+
+    <input type="button" value="Calcular celsius" onclick="pasaraCelsius()">
+    <input type="button" value="Calcular fahrenheit" onclick="pasaraFahrenheit()">
+  </form>
+</body>
+</html>

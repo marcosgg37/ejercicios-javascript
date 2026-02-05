@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 9 Formularios</title>
+  <script>
+    function calcularNota() {
+      let nota1 = document.notas.nota1.value * document.notas.porcentaje1.value/100;
+      let nota2 = document.notas.nota2.value * document.notas.porcentaje2.value/100;
+      document.notas.result.value = nota1 + nota2;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Calculo de Notas</h1>
+  <form name="notas">
+    <table>
+      <tr>
+        <td><b><label for="nota1">Nota:</label></b></td>
+        <td><input type="text" name="nota1" size="5" style="background-color: khaki;"></td>
+        <td><label for="porcentaje1">Porcentaje:</label></td>
+        <td><input type="text" name="porcentaje1" size="5" style="background-color: khaki;"></td>
+      </tr>
+      <tr>
+        <td><b><label for="nota2">Nota:</label></b></td>
+        <td><input type="text" name="nota2" size="5" style="background-color: khaki;"></td>
+        <td><label for="porcentaje2">Porcentaje:</label></td>
+        <td><input type="text" name="porcentaje2" size="5" style="background-color: khaki;"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="button" value="Calcular" onclick="calcularNota()"></td>
+        <td>Nota final:</td>
+        <td><input type="text" name="result" size="5" disabled></td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>

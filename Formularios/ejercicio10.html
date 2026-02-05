@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 10 Formularios</title>
+  <script src="http://momentjs.com/downloads/moment.min.js"></script>
+  <script></script>
+</head>
+<body>
+  <form>
+    <input type="date" name="start" id="start" onchange="getEventTime()">
+    <input type="date" name="end" id="end" onchange="getEventTime()">
+    <br>
+    <p id="result"></p>
+  </form> 
+  <script>
+    function getEventTime() {
+      var start = moment(document.getElementById("start").value);
+      var end = moment(document.getElementById("end").value);
+      document.getElementById("result").innerHTML = moment.duration(end.diff(start)).asDays();
+    }
+  </script>
+</body>
+</html>

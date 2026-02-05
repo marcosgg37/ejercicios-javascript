@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 13 Formularios</title>
+  <script>
+    var dinero = 0;
+
+    function inic() {
+      dinero = 100;
+      document.game.dinero.value = dinero;
+    }
+
+    function calc() {
+      let input = parseInt(document.game.num.value);
+      var apuesta = parseInt(document.game.apuesta.value);
+      var dado = Math.floor(Math.random() * 6) + 1;
+      var ganancia = 0;
+
+      if (dinero > 0) {
+        document.game.dado.value = dado;
+        if (input == dado) {
+          ganancia = apuesta * 2;
+          document.game.res.value = `Has ganado ${ganancia}!`;
+        } else {
+          ganancia = -apuesta;
+          document.game.res.value = `Has perdido ${-ganancia}`;
+        }
+        dinero += ganancia;
+        document.game.dinero.value = dinero;
+      } else {
+        window.alert("Has perdido todo tu dinero :(");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1 style="justify-self: center;">JUEGO APUESTAS</h1>
+  <form name="game">
+    <div align="center">
+      Dinero: <input type="text" name="dinero" size="5" disabled> &nbsp;&nbsp;
+      Numero del dado: <input type="text" name="dado" size="5" disabled>
+      <br><br>
+      Introduzca un numero del 1 al 6: <input type="text" name="num" size="5">
+      <br><br>
+      Introduzca su apuesta: <input type="text" name="apuesta" size="5">
+      <br><br>
+      <input type="button" value="Jugar" name="play" onclick="calc()">
+      <input type="button" value="Start" name="start" onclick="inic()">
+      <br><br>
+      <input type="text" name="res" size="15">
+    </div>
+  </form>
+</body>
+
+</html>
