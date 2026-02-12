@@ -4,9 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicio 7 Bucles</title>
-  <script></script>
+  <script>
+    function mostrarTabla() {
+      let num1 = parseInt(document.datos.num1.value);
+      let num2 = parseInt(document.datos.num2.value);
+
+      let result = `<table>`;
+      for (let i = 1; i <= num2; i++) {
+        result += `<tr>
+                    <td>${num1}x${i}</td>
+                    <td>=</td>
+                    <td>${num1 * i}
+                  </tr>`;
+      }
+      result += `</table>`
+
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
 </head>
 <body>
-  
+  <form name="datos">
+    <label for="num1">Tabla del número: </label><input type="text" name="num1" id="num1"><br>
+    <label for="num2">Hasta número:</label><input type="text" name="num2" id="num2"><br>
+    <input type="button" value="Mostrar tabla" onclick="mostrarTabla()">
+  </form>
+  <div style="border: 2px;" id="result"></div>
 </body>
 </html>
